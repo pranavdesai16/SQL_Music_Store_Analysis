@@ -28,6 +28,7 @@ The project uses the Chinook Music Store relational database.
 > **Insert your schema diagram below**
 
 <p align="center">
+![Database Schema](<img width="710" height="574" alt="MusicDatabaseSchema" src="https://github.com/user-attachments/assets/fd12f051-f2cb-49ef-8c2b-70ea62cdb52c" />)
 
 ![Database Schema](images/database_schema.png)
 
