@@ -83,6 +83,9 @@ Find the employee with the highest job level.
 > *(Insert screenshot below)*
 
 ![Query 1](images/query1.png)
+| Employee ID | Last Name | First Name | Title                  | Reports To | Level | Birthdate  | Hire Date  | Address            | City     | State | Country | Postal Code | Phone             | Fax               | Email                                                             |
+| ----------: | --------- | ---------- | ---------------------- | ---------- | ----- | ---------- | ---------- | ------------------ | -------- | ----- | ------- | ----------- | ----------------- | ----------------- | ----------------------------------------------------------------- |
+|           9 | Madan     | Mohan      | Senior General Manager | NULL       | L7    | 1961-01-26 | 2016-01-14 | 1008 Vrinda Ave MT | Edmonton | AB    | Canada  | T5K 2N1     | +1 (780) 428-9482 | +1 (780) 428-3457 | [madan.mohan@chinookcorp.com](mailto:madan.mohan@chinookcorp.com) |
 
 ---
 
