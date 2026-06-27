@@ -97,6 +97,8 @@ Find the employee with the highest job level.
 
 Identify countries generating the highest number of invoices.
 
+**SQL Query**
+
 <img width="652" height="137" alt="query_2" src="https://github.com/user-attachments/assets/ae3b97d6-5b69-4903-83ac-64974aa4a3f7" />
 
 
@@ -137,6 +139,7 @@ Identify countries generating the highest number of invoices.
 
 Retrieve the highest invoice amounts.
 
+**SQL Query**
 
 
 **Output**
@@ -155,6 +158,7 @@ Retrieve the highest invoice amounts.
 
 Determine the city with the highest total sales.
 
+**SQL Query**
 
 
 **Output**
@@ -223,6 +227,8 @@ Determine the city with the highest total sales.
 
 Identify the customer who spent the most money.
 
+**SQL Query**
+
 
 
 **Output**
@@ -240,6 +246,8 @@ Identify the customer who spent the most money.
 **Objective**
 
 Retrieve customers who purchased Rock music.
+
+**SQL Query**
 
 
 
@@ -315,6 +323,8 @@ Retrieve customers who purchased Rock music.
 
 Find artists with the highest number of Rock tracks.
 
+**SQL Query**
+
 
 
 **Output**
@@ -339,6 +349,8 @@ Find artists with the highest number of Rock tracks.
 **Objective**
 
 List songs longer than the average track duration.
+
+**SQL Query**
 
 
 
@@ -382,6 +394,8 @@ List songs longer than the average track duration.
 **Objective**
 
 Calculate how much each customer spent on the best-selling artist.
+
+**SQL Query**
 
 
 
@@ -441,6 +455,8 @@ Calculate how much each customer spent on the best-selling artist.
 
 Identify the most purchased music genre in every country.
 
+**SQL Query**
+
 
 
 **Output**
@@ -479,6 +495,8 @@ Identify the most purchased music genre in every country.
 **Objective**
 
 Determine the highest spending customer in each country.
+
+**SQL Query**
 
 
 
