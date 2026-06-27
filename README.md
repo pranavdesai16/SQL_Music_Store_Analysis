@@ -141,6 +141,8 @@ Retrieve the highest invoice amounts.
 
 **SQL Query**
 
+<img width="652" height="136" alt="query_3" src="https://github.com/user-attachments/assets/e748fbb0-52a8-4e8b-b306-7053f8db1b19" />
+
 
 **Output**
 
@@ -159,6 +161,8 @@ Retrieve the highest invoice amounts.
 Determine the city with the highest total sales.
 
 **SQL Query**
+
+<img width="781" height="255" alt="query_4" src="https://github.com/user-attachments/assets/ce98b1c9-1dd0-4348-89a5-68a8af157dae" />
 
 
 **Output**
@@ -229,6 +233,7 @@ Identify the customer who spent the most money.
 
 **SQL Query**
 
+<img width="794" height="243" alt="query_5" src="https://github.com/user-attachments/assets/5e053240-751f-4f06-a1e6-8b43f3d21b8b" />
 
 
 **Output**
@@ -249,6 +254,7 @@ Retrieve customers who purchased Rock music.
 
 **SQL Query**
 
+<img width="917" height="350" alt="query_6" src="https://github.com/user-attachments/assets/56b471b7-f0bf-4d9e-bcd0-a53eb9ff30e8" />
 
 
 **Output**
@@ -325,6 +331,7 @@ Find artists with the highest number of Rock tracks.
 
 **SQL Query**
 
+<img width="827" height="324" alt="query_7" src="https://github.com/user-attachments/assets/9c864e5c-08ea-4130-bad9-c71eadf67940" />
 
 
 **Output**
@@ -352,6 +359,7 @@ List songs longer than the average track duration.
 
 **SQL Query**
 
+<img width="908" height="237" alt="query_8" src="https://github.com/user-attachments/assets/778dc83b-4c57-4470-a88e-10df75b3966f" />
 
 
 **Output**
@@ -397,6 +405,8 @@ Calculate how much each customer spent on the best-selling artist.
 
 **SQL Query**
 
+<img width="820" height="340" alt="query_9_1" src="https://github.com/user-attachments/assets/ee884067-c604-4be7-ae4c-e7435092d65a" />
+<img width="815" height="295" alt="query_9_2" src="https://github.com/user-attachments/assets/8c86c19d-bd80-4398-a260-3f0f345b7849" />
 
 
 **Output**
@@ -457,6 +467,7 @@ Identify the most purchased music genre in every country.
 
 **SQL Query**
 
+<img width="866" height="510" alt="query_10" src="https://github.com/user-attachments/assets/1a0c2d9c-2323-4670-b1cf-52c2d6518877" />
 
 
 **Output**
@@ -498,6 +509,7 @@ Determine the highest spending customer in each country.
 
 **SQL Query**
 
+<img width="983" height="364" alt="query_11" src="https://github.com/user-attachments/assets/0b7859ae-4547-4f82-8839-60357d1de41f" />
 
 
 **Output**
