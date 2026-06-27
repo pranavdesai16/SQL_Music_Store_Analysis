@@ -82,6 +82,7 @@ Find the employee with the highest job level.
 
 <img width="652" height="142" alt="query_1" src="https://github.com/user-attachments/assets/8291acdb-708e-4b7c-aae3-06fcb91255a3" />
 
+
 **Output**
 
 | Employee ID | Last Name | First Name | Title                  | Reports To | Level | Birthdate  | Hire Date  | Address            | City     | State | Country | Postal Code | Phone             | Fax               | Email                                                             |
@@ -96,7 +97,10 @@ Find the employee with the highest job level.
 
 Identify countries generating the highest number of invoices.
 
-![Query 2](images/query2.png)
+
+
+**Output**
+
 | Total Invoices | Billing Country |
 | -------------: | --------------- |
 |            131 | USA             |
@@ -132,7 +136,10 @@ Identify countries generating the highest number of invoices.
 
 Retrieve the highest invoice amounts.
 
-![Query 3](images/query3.png)
+
+
+**Output**
+
 | Total |
 | ----: |
 | 23.76 |
@@ -147,7 +154,10 @@ Retrieve the highest invoice amounts.
 
 Determine the city with the highest total sales.
 
-![Query 4](images/query4.png)
+
+
+**Output**
+
 | Billing City        | Invoice Total |
 | ------------------- | ------------: |
 | Prague              |        273.24 |
@@ -212,7 +222,10 @@ Determine the city with the highest total sales.
 
 Identify the customer who spent the most money.
 
-![Query 5](images/query5.png)
+
+
+**Output**
+
 | Customer ID | First Name | Last Name |  Total |
 | ----------: | ---------- | --------- | -----: |
 |           5 | R          | Madhav    | 144.54 |
@@ -227,7 +240,10 @@ Identify the customer who spent the most money.
 
 Retrieve customers who purchased Rock music.
 
-![Query 6](images/query6.png)
+
+
+**Output**
+
 | Email                                                                 | First Name | Last Name    |
 | --------------------------------------------------------------------- | ---------- | ------------ |
 | [aaronmitchell@yahoo.ca](mailto:aaronmitchell@yahoo.ca)               | Aaron      | Mitchell     |
@@ -298,7 +314,10 @@ Retrieve customers who purchased Rock music.
 
 Find artists with the highest number of Rock tracks.
 
-![Query 7](images/query7.png)
+
+
+**Output**
+
 | Artist ID | Artist Name                  | Number of Songs |
 | --------: | ---------------------------- | --------------: |
 |        22 | Led Zeppelin                 |             114 |
@@ -320,7 +339,10 @@ Find artists with the highest number of Rock tracks.
 
 List songs longer than the average track duration.
 
-![Query 8](images/query8.png)
+
+
+**Output**
+
 | Track Name                        | Duration (Milliseconds) |
 | --------------------------------- | ----------------------: |
 | Occupation / Precipice            |               5,286,953 |
@@ -360,12 +382,7 @@ List songs longer than the average track duration.
 
 Calculate how much each customer spent on the best-selling artist.
 
-![Query 9](images/query9.png)
-## Query 9: Amount Spent by Each Customer on Queen
 
-```sql
--- Your SQL query here
-```
 
 **Output**
 
@@ -423,7 +440,10 @@ Calculate how much each customer spent on the best-selling artist.
 
 Identify the most purchased music genre in every country.
 
-![Query 10](images/query10.png)
+
+
+**Output**
+
 | Purchases | Country        | Genre              | Genre ID |
 | --------: | -------------- | ------------------ | -------: |
 |        17 | Argentina      | Alternative & Punk |        4 |
@@ -459,7 +479,10 @@ Identify the most purchased music genre in every country.
 
 Determine the highest spending customer in each country.
 
-![Query 11](images/query11.png)
+
+
+**Output**
+
 | Customer ID | First Name | Last Name    | Billing Country | Total Spending |
 | ----------: | ---------- | ------------ | --------------- | -------------: |
 |          56 | Diego      | Gutiérrez    | Argentina       |          39.60 |
@@ -506,35 +529,6 @@ Through this project, I gained practical experience in:
 
 ---
 
-# 📁 Project Structure
-
-```text
-SQL-Music-Store-Analysis/
-│
-├── README.md
-├── Music_Store_Analysis.sql
-├── Dataset/
-│
-├── images/
-│   ├── database_schema.png
-│   ├── query1.png
-│   ├── query2.png
-│   ├── query3.png
-│   ├── query4.png
-│   ├── query5.png
-│   ├── query6.png
-│   ├── query7.png
-│   ├── query8.png
-│   ├── query9.png
-│   ├── query10.png
-│   └── query11.png
-│
-└── presentation/
-    └── SQL_Music_Store_Analysis.pptx
-```
-
----
-
 # 🚀 Future Improvements
 
 * Add interactive Power BI dashboard
@@ -542,16 +536,6 @@ SQL-Music-Store-Analysis/
 * Write additional business-focused SQL queries
 * Optimize query performance
 * Perform exploratory data analysis using Python
-
----
-
-# 📬 Connect With Me
-
-**GitHub:** https://github.com/yourusername
-
-**LinkedIn:** https://linkedin.com/in/yourprofile
-
-**Email:** [your.email@example.com](mailto:your.email@example.com)
 
 ---
 
