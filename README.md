@@ -70,13 +70,14 @@ The project uses the Chinook Music Store relational database.
 
 # 📈 Business Questions Solved
 
-## 🟢 Easy Level
 
 ### 1. Who is the senior-most employee based on job title?
+
 
 **Objective**
 
 Find the employee with the highest job level.
+
 
 **SQL Query**
 
@@ -99,9 +100,11 @@ LIMIT 1;
 
 ### 2. Which countries have the most invoices?
 
+
 **Objective**
 
 Identify countries generating the highest number of invoices.
+
 
 **SQL Query**
 
@@ -145,9 +148,11 @@ ORDER BY c DESC;
 
 ### 3. What are the top 3 invoice totals?
 
+
 **Objective**
 
 Retrieve the highest invoice amounts.
+
 
 **SQL Query**
 
@@ -170,9 +175,11 @@ LIMIT 3;
 
 ### 4. Which city has the best customers? We would like to throw a promotional Music Festival in the city where we made the most money. Write a query that returns one city that has the highest sum of invoice totals. Return both the city name & sum of all invoice totals. 
 
+
 **Objective**
 
 Determine the city with the highest total sales.
+
 
 **SQL Query**
 
@@ -245,9 +252,11 @@ ORDER BY invoice_total DESC;
 
 ### 5. Who is the best customer? The customer who has spent the most money will be declared the best customer. Write a query that returns the person who has spent the most money.
 
+
 **Objective**
 
 Identify the customer who spent the most money.
+
 
 **SQL Query**
 
@@ -269,13 +278,14 @@ LIMIT 1;
 
 ---
 
-# 🟡 Moderate Level
 
 ### 6. Write a query to return the email, first name, last name,& Genre of all Rock Music Listeners. Return your list ordered alphabetically by email, starting with A. 
+
 
 **Objective**
 
 Retrieve customers who purchased Rock music.
+
 
 **SQL Query**
 
@@ -364,9 +374,11 @@ ORDER BY email;
 
 ### 7. Let's invite the artists who have written the most rock music in our dataset. Write a query that returns the Artist name and total track count of the top 10 rock bands.
 
+
 **Objective**
 
 Find artists with the highest number of Rock tracks.
+
 
 **SQL Query**
 
@@ -404,9 +416,11 @@ LIMIT 10;
 
 ### 8. Return all the track names that have a song length longer than the average song length. Return the Name and Milliseconds for each track. Order by the song length, with the longest songs listed first.
 
+
 **Objective**
 
 List songs longer than the average track duration.
+
 
 **SQL Query**
 
@@ -453,13 +467,14 @@ ORDER BY milliseconds DESC;
 
 ---
 
-# 🔴 Advanced Level
 
 ### 9. Find the amount spent by each customer on artists? Write a query to return customer name, artist name and total spent.
+
 
 **Objective**
 
 Calculate how much each customer spent on the best-selling artist.
+
 
 **SQL Query**
 
@@ -547,9 +562,11 @@ ORDER BY 5 DESC;
 
 ### 10. We want to find out the most popular music Genre for each country. We determine the most popular genre as the genre with the highest number of purchases. Write a query that returns each country along with the top genre. For countries where the maximum number of purchases is shared, return all Genres.
 
+
 **Objective**
 
 Identify the most purchased music genre in every country.
+
 
 **SQL Query**
 
@@ -610,9 +627,11 @@ WHERE RowNo <=1;
 
 ### 11. Write a query that determines the customer who has spent the most on music for each country. Write a query that returns the country along with the top customer and how much they spent. For countries where the top amount spent is shared, provide all customers who spent this amount.
 
+
 **Objective**
 
 Determine the highest-spending customer in each country.
+
 
 **SQL Query**
 
@@ -675,7 +694,7 @@ Through this project, I gained practical experience in:
 * Building Common Table Expressions (CTEs)
 * Applying Window Functions
 * Solving business-oriented SQL problems
-* Analyzing customer purchasing behavior
+* Analyzing customer purchasing behaviour
 * Generating actionable business insights
 
 ---
