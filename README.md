@@ -81,10 +81,12 @@ Find the employee with the highest job level.
 **SQL Query**
 
 ```sql
+
 SELECT * 
 FROM employee
 ORDER BY levels DESC
 LIMIT 1;
+
 ```
 
 **Output**
