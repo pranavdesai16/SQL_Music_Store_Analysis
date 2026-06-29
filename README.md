@@ -80,8 +80,6 @@ Find the employee with the highest job level.
 
 **SQL Query**
 
-<img width="652" height="142" alt="query_1" src="https://github.com/user-attachments/assets/8291acdb-708e-4b7c-aae3-06fcb91255a3" />
-
 ```sql
 SELECT * 
 FROM employee
@@ -105,8 +103,12 @@ Identify countries generating the highest number of invoices.
 
 **SQL Query**
 
-<img width="652" height="137" alt="query_2" src="https://github.com/user-attachments/assets/ae3b97d6-5b69-4903-83ac-64974aa4a3f7" />
-
+```sql
+SELECT COUNT(*) AS c, billing_country
+FROM invoice
+GROUP BY billing_country
+ORDER BY c DESC;
+```
 
 **Output**
 
@@ -147,8 +149,12 @@ Retrieve the highest invoice amounts.
 
 **SQL Query**
 
-<img width="652" height="136" alt="query_3" src="https://github.com/user-attachments/assets/e748fbb0-52a8-4e8b-b306-7053f8db1b19" />
-
+```sql
+SELECT total
+FROM invoice
+ORDER BY total DESC
+LIMIT 3;
+```
 
 **Output**
 
@@ -160,7 +166,7 @@ Retrieve the highest invoice amounts.
 
 ---
 
-### 4. Which city generated the highest revenue?
+### 4. Which city has the best customers? We would like to throw a promotional Music Festival in the city where we made the most money. Write a query that returns one city that has the highest sum of invoice totals. Return both the city name & sum of all invoice totals. 
 
 **Objective**
 
@@ -168,8 +174,12 @@ Determine the city with the highest total sales.
 
 **SQL Query**
 
-<img width="781" height="255" alt="query_4" src="https://github.com/user-attachments/assets/ce98b1c9-1dd0-4348-89a5-68a8af157dae" />
-
+```sql
+SELECT billing_city, SUM(total) AS invoice_total
+FROM invoice
+GROUP BY billing_city
+ORDER BY invoice_total DESC;
+```
 
 **Output**
 
@@ -231,7 +241,7 @@ Determine the city with the highest total sales.
 
 ---
 
-### 5. Who is the best customer?
+### 5. Who is the best customer? The customer who has spent the most money will be declared the best customer. Write a query that returns the person who has spent the most money.
 
 **Objective**
 
@@ -239,8 +249,15 @@ Identify the customer who spent the most money.
 
 **SQL Query**
 
-<img width="794" height="243" alt="query_5" src="https://github.com/user-attachments/assets/5e053240-751f-4f06-a1e6-8b43f3d21b8b" />
-
+```sql
+SELECT c.customer_id,c.first_name,c.last_name,SUM(i.total) AS Total 
+FROM customer c
+JOIN invoice i
+ON c.customer_id = i.customer_id
+GROUP BY c.customer_id
+ORDER BY Total DESC
+LIMIT 1;
+```
 
 **Output**
 
@@ -252,7 +269,7 @@ Identify the customer who spent the most money.
 
 # 🟡 Moderate Level
 
-### 6. Rock Music Listeners
+### 6. Write a query to return the email, first name, last name,& Genre of all Rock Music Listeners. Return your list ordered alphabetically by email, starting with A. 
 
 **Objective**
 
@@ -260,8 +277,22 @@ Retrieve customers who purchased Rock music.
 
 **SQL Query**
 
-<img width="917" height="350" alt="query_6" src="https://github.com/user-attachments/assets/56b471b7-f0bf-4d9e-bcd0-a53eb9ff30e8" />
-
+```sql
+SELECT DISTINCT email, first_name, last_name
+FROM customer c 
+JOIN invoice i
+ON c.customer_id = i.customer_id
+JOIN invoice_line il
+ON i.invoice_id = il.invoice_id
+WHERE track_id IN(
+	SELECT track_id 
+	FROM track t
+	JOIN genre g
+	ON t.genre_id = g.genre_id
+	WHERE g.name LIKE 'Rock'
+)
+ORDER BY email;
+```
 
 **Output**
 
@@ -329,7 +360,7 @@ Retrieve customers who purchased Rock music.
 
 ---
 
-### 7. Top 10 Rock Artists
+### 7. Let's invite the artists who have written the most rock music in our dataset. Write a query that returns the Artist name and total track count of the top 10 rock bands.
 
 **Objective**
 
@@ -337,8 +368,20 @@ Find artists with the highest number of Rock tracks.
 
 **SQL Query**
 
-<img width="827" height="324" alt="query_7" src="https://github.com/user-attachments/assets/9c864e5c-08ea-4130-bad9-c71eadf67940" />
-
+```sql
+SELECT artist.artist_id, artist.name, COUNT(artist.artist_id) AS number_of_songs
+FROM track 
+JOIN album 
+ON album.album_id = track.album_id
+JOIN artist 
+ON artist.artist_id = album.artist_id
+JOIN genre 
+ON genre.genre_id = track.genre_id
+WHERE genre.name LIKE 'Rock'
+GROUP BY artist.artist_id
+ORDER BY number_of_songs DESC
+LIMIT 10;
+```
 
 **Output**
 
@@ -357,7 +400,7 @@ Find artists with the highest number of Rock tracks.
 
 ---
 
-### 8. Tracks Longer Than Average
+### 8. Return all the track names that have a song length longer than the average song length. Return the Name and Milliseconds for each track. Order by the song length, with the longest songs listed first.
 
 **Objective**
 
@@ -365,8 +408,15 @@ List songs longer than the average track duration.
 
 **SQL Query**
 
-<img width="908" height="237" alt="query_8" src="https://github.com/user-attachments/assets/778dc83b-4c57-4470-a88e-10df75b3966f" />
-
+```sql
+SELECT name,milliseconds
+FROM track
+WHERE milliseconds > (
+	SELECT AVG(milliseconds) AS avg_track_length
+	FROM track
+)
+ORDER BY milliseconds DESC;
+```
 
 **Output**
 
@@ -403,7 +453,7 @@ List songs longer than the average track duration.
 
 # 🔴 Advanced Level
 
-### 9. Customer Spending by Artist
+### 9. Find the amount spent by each customer on artists? Write a query to return customer name, artist name and total spent.
 
 **Objective**
 
@@ -411,9 +461,37 @@ Calculate how much each customer spent on the best-selling artist.
 
 **SQL Query**
 
-<img width="820" height="340" alt="query_9_1" src="https://github.com/user-attachments/assets/ee884067-c604-4be7-ae4c-e7435092d65a" />
-<img width="815" height="295" alt="query_9_2" src="https://github.com/user-attachments/assets/8c86c19d-bd80-4398-a260-3f0f345b7849" />
-
+```sql
+WITH best_selling_artist AS(
+	SELECT artist.artist_id AS artist_id, artist.name AS artist_name, 
+	SUM(invoice_line.unit_price*invoice_line.quantity) AS total_sales
+	FROM invoice_line 
+	JOIN track
+	ON track.track_id = invoice_line.track_id
+	JOIN album
+	ON album.album_id = track.album_id
+	JOIN artist
+	ON artist.artist_id = album.artist_id
+	GROUP BY 1
+	ORDER BY 3 DESC
+	LIMIT 1
+)
+SELECT c.customer_id, c.first_name, c.last_name, bsa.artist_name,
+SUM(il.unit_price*il.quantity) AS amount_spent
+FROM invoice i
+JOIN customer c 
+ON c.customer_id = i.customer_id
+JOIN invoice_line il
+ON il.invoice_id = i.invoice_id
+JOIN track t
+ON t.track_id = il.track_id
+JOIN album alb
+ON alb.album_id = t.album_id
+JOIN best_selling_artist bsa
+ON bsa.artist_id = alb.artist_id
+GROUP BY 1,2,3,4
+ORDER BY 5 DESC;
+```
 
 **Output**
 
@@ -465,7 +543,7 @@ Calculate how much each customer spent on the best-selling artist.
 
 ---
 
-### 10. Most Popular Genre by Country
+### 10. We want to find out the most popular music Genre for each country. We determine the most popular genre as the genre with the highest number of purchases. Write a query that returns each country along with the top genre. For countries where the maximum number of purchases is shared, return all Genres.
 
 **Objective**
 
@@ -473,8 +551,29 @@ Identify the most purchased music genre in every country.
 
 **SQL Query**
 
-<img width="866" height="510" alt="query_10" src="https://github.com/user-attachments/assets/1a0c2d9c-2323-4670-b1cf-52c2d6518877" />
-
+```sql
+WITH popular_genre AS
+(
+	SELECT COUNT(invoice_line.quantity) AS purchases, customer.country,
+	genre.name, genre.genre_id,
+	ROW_NUMBER() OVER(PARTITION BY customer.country
+	ORDER BY COUNT(invoice_line.quantity) DESC) AS RowNo
+	FROM invoice_line
+	JOIN invoice
+	ON invoice.invoice_id = invoice_line.invoice_id
+	JOIN customer 
+	ON customer.customer_id = invoice.customer_id
+	JOIN track
+	ON track.track_id = invoice_line.track_id
+	JOIN genre
+	ON genre.genre_id = track.genre_id
+	GROUP BY 2,3,4
+	ORDER BY 2 ASC, 1 DESC
+)
+SELECT * 
+FROM popular_genre 
+WHERE RowNo <=1;
+```
 
 **Output**
 
@@ -507,16 +606,29 @@ Identify the most purchased music genre in every country.
 
 ---
 
-### 11. Top Customer by Country
+### 11. Write a query that determines the customer who has spent the most on music for each country. Write a query that returns the country along with the top customer and how much they spent. For countries where the top amount spent is shared, provide all customers who spent this amount.
 
 **Objective**
 
-Determine the highest spending customer in each country.
+Determine the highest-spending customer in each country.
 
 **SQL Query**
 
-<img width="983" height="364" alt="query_11" src="https://github.com/user-attachments/assets/0b7859ae-4547-4f82-8839-60357d1de41f" />
-
+```sql
+WITH Customer_with_country AS
+(
+	SELECT customer.customer_id, first_name, last_name, billing_country,
+	SUM(total) AS total_spending, ROW_NUMBER() OVER(PARTITION BY billing_country ORDER BY SUM(total) DESC) AS RowNO
+	FROM invoice
+	JOIN customer
+	ON customer.customer_id = invoice.customer_id
+	GROUP BY 1,2,3,4
+	ORDER BY 4 ASC, 5 DESC
+)
+SELECT *
+FROM Customer_with_country
+WHERE RowNO <= 1;
+```
 
 **Output**
 
