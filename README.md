@@ -82,6 +82,12 @@ Find the employee with the highest job level.
 
 <img width="652" height="142" alt="query_1" src="https://github.com/user-attachments/assets/8291acdb-708e-4b7c-aae3-06fcb91255a3" />
 
+```sql
+SELECT * 
+FROM employee
+ORDER BY levels DESC
+LIMIT 1;
+```
 
 **Output**
 
